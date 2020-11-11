@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+  <Document name="objectscript-pi.ZPM">
+    <Module>
+      <Name>objectscript-pi</Name>
+      <Version>1.1.1</Version>
+      <Packaging>module</Packaging>
+      <SourcesRoot>src</SourcesRoot>
+      <Resource Name="acme.Math.PKG"/>
+    </Module>
+  </Document>
+</Export>
