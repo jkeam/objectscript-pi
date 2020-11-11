@@ -28,8 +28,8 @@ USER> write ##class(acme.Math.Utils).CalculatePi(50)
 cd objectscript-pi
 PROJECT_ROOT=`pwd`
 
-docker build -t quay.io/jkeam/objectscript-pi:latest .
-docker run -d --name iris -p 1972 -p 52773 -p 53773 -v $PROJECT_ROOT:/irisdev/app -it quay.io/jkeam/objectscript-pi
+docker build -t objectscript-pi:latest .
+docker run -d --name iris -p 1972 -p 52773 -p 53773 -v $PROJECT_ROOT:/irisdev/app -it objectscript-pi
 ```
 
 2.  Run command
