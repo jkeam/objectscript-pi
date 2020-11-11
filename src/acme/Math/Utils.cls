@@ -17,6 +17,7 @@ ClassMethod Datetime() As %Status
     return "UTC date and time:   " _ $ZDATETIME(stamp,1,1,2)
 }
 
+// Implementation of BBP (https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula)
 ClassMethod CalculatePi(times) As %Status
 {
     FOR i=0:1:times {
