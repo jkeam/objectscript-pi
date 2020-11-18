@@ -27,6 +27,13 @@ curl http://localhost:52773/api/greetings/jon
 # returns {"message":"hi josh"}
 ```
 
+5.  Management URL is at
+```
+http://localhost:52773/csp/sys/%25CSP.Portal.Home.zen
+username: _SYSTEM
+password: SYS
+```
+
 ### Docker
 1.  Build and start container
 ```
