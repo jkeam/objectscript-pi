@@ -21,6 +21,11 @@ docker-compose exec iris iris session iris
 USER> write ##class(acme.Math.Utils).CalculatePi(50)
 ```
 
+4.  You could also hit the API
+```
+curl http://localhost:52773/api/greetings/jon
+# returns {"message":"hi josh"}
+```
 
 ### Docker
 1.  Build and start container
