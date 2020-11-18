@@ -1,2 +1,8 @@
 **/.DS_Store
 .git
+docker-compose.yml
+kube/
+README.md
+.gitattributes
+.github/
+.vscode/
