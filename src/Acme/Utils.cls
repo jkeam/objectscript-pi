@@ -1,4 +1,4 @@
-Class acme.Math.Utils
+Class Acme.Utils
 {
 
 ClassMethod Test() As %Status

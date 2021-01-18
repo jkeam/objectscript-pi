@@ -6,16 +6,10 @@
       <Version>1.1.0</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="acme.Math.PKG"/>
-      <Dependencies>
-        <ModuleReference>
-          <Name>swagger-ui</Name>
-          <Version>1.*.*</Version>
-        </ModuleReference>
-      </Dependencies>
+      <Resource Name="Acme.PKG"/>
       <CSPApplication
         Url="/api"
-        DispatchClass="acme.Math.Api"
+        DispatchClass="Acme.Api"
         MatchRoles=":{$dbrole}"
         PasswordAuthEnabled="0"
         UnauthenticatedEnabled="1"

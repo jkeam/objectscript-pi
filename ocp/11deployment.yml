@@ -23,14 +23,21 @@ spec:
           env:
           - name: ENV
             value: staging
+          - name: ISC_DATA_DIRECTORY
+            value: /durable/data
           ports:
           - containerPort: 1972
-            name: iris0
-          - containerPort: 51773
             name: iris1
           - containerPort: 52773
             name: iris2
           - containerPort: 53773
             name: iris3
+          volumeMounts:
+          - name: persistent-storage
+            mountPath: /durable
       restartPolicy: Always
       serviceAccountName: "useroot"
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim
