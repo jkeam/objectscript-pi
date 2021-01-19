@@ -1,6 +1,7 @@
 Class Acme.Api Extends %CSP.REST
 {
 Parameter HandleCorsRequest = 1;
+Parameter CHARSET = "utf-8";
 
 XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 {
