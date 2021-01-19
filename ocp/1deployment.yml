@@ -18,7 +18,7 @@ spec:
         nickname: objectscript
     spec:
       containers:
-        - image: quay.io/jkeam/objectscript-pi@sha256:21316faab399b5442342ec6e3e5309d4e777bc5cbc2de42766b3dacbf6ecab81
+        - image: quay.io/jkeam/objectscript-pi@sha256:c43a49f76d81ddf51f6749112f51584e6bfeb50c650f149b667175528da5fca4
           name: iris
           env:
           - name: ENV
