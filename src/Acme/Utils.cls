@@ -8,7 +8,7 @@ ClassMethod Test() As %Status
 
 ClassMethod SayHi(name) As %Status
 {
-    return "hi " _ name
+    return "Bonjour " _ name
 }
 
 ClassMethod Datetime() As %Status
