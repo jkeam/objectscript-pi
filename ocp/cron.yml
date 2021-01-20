@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: iris-cron
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: iris
+            image: image-registry.openshift-image-registry.svc:5000/iris/objectscript-pi:latest
+            imagePullPolicy: IfNotPresent
+            args:
+            - iris start IRIS
+            - && iris session IRIS < /tmp/cron.script
+            - && iris stop IRIS quietly
+          restartPolicy: OnFailure

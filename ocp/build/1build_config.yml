@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: iris-build
+  namespace: iris
+  labels:
+    app: iris
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/jkeam/objectscript-pi.git'
+      ref: master
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'objectscript-pi:latest'

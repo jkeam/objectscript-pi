@@ -1,0 +1,43 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: iris
+  labels:
+    app: iris
+spec:
+  selector:
+    matchLabels:
+      app: iris
+      nickname: objectscript
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: iris
+        nickname: objectscript
+    spec:
+      containers:
+        - image: image-registry.openshift-image-registry.svc:5000/iris/objectscript-pi:latest
+          name: iris
+          env:
+          - name: ENV
+            value: staging
+          - name: ISC_DATA_DIRECTORY
+            value: /durable/data
+          ports:
+          - containerPort: 1972
+            name: iris1
+          - containerPort: 52773
+            name: iris2
+          - containerPort: 53773
+            name: iris3
+          volumeMounts:
+          - name: persistent-storage
+            mountPath: /durable
+      restartPolicy: Always
+      serviceAccountName: "useroot"
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim

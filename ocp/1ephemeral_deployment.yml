@@ -18,13 +18,11 @@ spec:
         nickname: objectscript
     spec:
       containers:
-        - image: quay.io/jkeam/objectscript-pi@sha256:c43a49f76d81ddf51f6749112f51584e6bfeb50c650f149b667175528da5fca4
+        - image: image-registry.openshift-image-registry.svc:5000/iris/objectscript-pi:latest
           name: iris
           env:
           - name: ENV
             value: staging
-          - name: ISC_DATA_DIRECTORY
-            value: /durable/data
           ports:
           - containerPort: 1972
             name: iris1
@@ -32,12 +30,5 @@ spec:
             name: iris2
           - containerPort: 53773
             name: iris3
-          volumeMounts:
-          - name: persistent-storage
-            mountPath: /durable
       restartPolicy: Always
       serviceAccountName: "useroot"
-      volumes:
-      - name: persistent-storage
-        persistentVolumeClaim:
-          claimName: task-pv-claim
