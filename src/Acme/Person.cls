@@ -14,6 +14,4 @@ Property Name As %String(MAXLEN = 250) [ Required ];
 
 Property FavoriteColor As %String(MAXLEN = 50);
 
-Property ProcessedAt As %TimeStamp;
-
 }
