@@ -1,4 +1,4 @@
-FROM docker.io/store/intersystems/iris-community:2021.1.0.215.0
+FROM docker.io/intersystemsdc/iris-community:2020.4.0.524.0-zpm
 
 USER root
 
