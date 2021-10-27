@@ -2,7 +2,6 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   name: iris-build
-  namespace: iris
   labels:
     app: iris
 spec:

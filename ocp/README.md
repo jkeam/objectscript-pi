@@ -8,9 +8,34 @@ oc new-project iris
 
 oc create serviceaccount useroot
 oc adm policy add-scc-to-user anyuid -z useroot
+```
 
+Create Image Stream
+
+```
+oc apply -f ./build/0image_stream.yml
+oc apply -f ./build/1build_config.yml
+```
+
+
+For ephemeral storage use:
+
+```
+oc apply -f ./1ephemeral_deployment.yml
+```
+
+
+For persistent storage, instead of the above, use:
+
+```
 oc apply -f ./0pvc.yml
-oc apply -f ./1deployment.yml
+oc apply -f ./1persistent_deployment.yml
+```
+
+
+Create service and route:
+
+```
 oc apply -f ./2service.yml
 oc apply -f ./3route.yml
 ```
