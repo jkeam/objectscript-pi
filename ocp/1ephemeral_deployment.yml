@@ -18,7 +18,7 @@ spec:
         nickname: objectscript
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/iris/objectscript-pi:latest
+        - image: image-registry.openshift-image-registry.svc:5000/PROJECT/objectscript-pi:latest
           name: iris
           env:
           - name: ENV

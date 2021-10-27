@@ -21,7 +21,7 @@ oc apply -f ./build/1build_config.yml
 For ephemeral storage use:
 
 ```
-oc apply -f ./1ephemeral_deployment.yml
+cat ./1ephemeral_deployment.yml | sed "s/PROJECT/$(oc project -q)/" | oc apply -f -
 ```
 
 
@@ -29,7 +29,7 @@ For persistent storage, instead of the above, use:
 
 ```
 oc apply -f ./0pvc.yml
-oc apply -f ./1persistent_deployment.yml
+cat ./1persistent_deployment.yml | sed "s/PROJECT/$(oc project -q)/" | oc apply -f -
 ```
 
 
