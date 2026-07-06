@@ -24,7 +24,7 @@ USER> write ##class(Acme.Utils).CalculatePi(50)
 4.  You could also hit the API
 ```
 curl http://localhost:52773/api/greetings/jon
-# returns {"message":"hi josh"}
+# returns {"message":"hi jon"}
 ```
 
 5.  Management URL is at
